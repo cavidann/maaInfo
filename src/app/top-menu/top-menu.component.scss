@@ -1,0 +1,26 @@
+header{
+  background: #3f51b5;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  button{
+    padding: 0px;
+  }
+  a{
+    text-transform: capitalize;
+    color: white;
+    min-width: 64px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 16px;
+    height: 100%;
+  }
+}

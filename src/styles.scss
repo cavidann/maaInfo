@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #b3b3b3;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-33 {
+  width: 33.33%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-100{
+  width: 100%;
+}
+
+.link{
+  cursor: pointer;
+}
+
+img{
+  width: 100%;
+}
+
+.p-10{
+  padding: 10px;
+}
