@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,11 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  // @Input() condition: boolean;
+  lang: string;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.lang = this.router.url.substring(0, 3);
+
+    this.router.events.subscribe(
+      () => {
+        this.lang = this.router.url.substring(0, 3);
+        console.log(this.lang);
+      }
+    );
   }
 
 }

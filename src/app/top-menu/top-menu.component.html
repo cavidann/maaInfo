@@ -1,6 +1,9 @@
 <header>
   <div class="example-button-row">
     <button mat-button><a class="flex" [routerLink]="['/']" routerLinkActive="active" >Maa info</a></button>
-    <button mat-button><a class="flex" [routerLink]="['/paragraph']" routerLinkActive="active" >paragraphs</a></button>
+    <button mat-button><a class="flex" routerLink="{{lang}}/paragraph" routerLinkActive="active" >{{'paragraph' | translate}}</a></button>
+    <button mat-button><a class="flex" [routerLink]="[{outlets:{popup: ['contactus'] }}]">contact us</a></button>
+    <button mat-raised-button  color="warn" (click)="switchLanguage('en')">en</button>
+    <button mat-raised-button  color="warn" (click)="switchLanguage('az')">az</button>
   </div>
 </header>
