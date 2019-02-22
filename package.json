@@ -24,7 +24,10 @@
     "@angular/router": "~7.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "contentful": "^7.3.0",
     "core-js": "^2.5.4",
+    "install": "^0.12.2",
+    "marked": "^0.6.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

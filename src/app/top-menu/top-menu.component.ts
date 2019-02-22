@@ -9,35 +9,38 @@ import { Router } from '@angular/router';
 })
 export class TopMenuComponent implements OnInit {
 
+  defaultLang: string;
   lang: string;
 
   constructor(
     private translate: TranslateService,
     private router: Router
   ) {
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('az');
-
-      // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('az');
+    this.setDefaultLang();
   }
 
   ngOnInit() {
-    this.lang = this.router.url.substring(0, 3);
-
-    this.router.events.subscribe(
-      () => {
-        this.lang = this.router.url.substring(0, 3);
-        console.log(this.lang);
-      }
-    );
   }
 
   switchLanguage(lang: string) {
     this.translate.use(lang);
-    const url = this.router.url.substring(3);
-    // console.log(lang+url);
-    this.router.navigate([lang + url]);
+    this.router.navigate([lang + '/home']);
+  }
+
+  setDefaultLang() {
+    this.router.events.subscribe(
+      () => {
+        this.lang = this.router.url.substring(1, 3);
+        this.defaultLang = this.router.url.substring(1, 3);
+        if (this.defaultLang.length > 0) {
+          // this language will be used as a fallback when a translation isn't found in the current language
+          this.translate.setDefaultLang(this.defaultLang);
+
+            // the lang to use, if the lang isn't available, it will use the current loader to get them
+          this.translate.use(this.defaultLang);
+        }
+      }
+    );
   }
 
 }

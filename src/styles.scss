@@ -46,7 +46,8 @@ body {
 }
 
 .container {
-  max-width: 920px;
+  // max-width: 920px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -76,4 +77,43 @@ img{
 
 .p-10{
   padding: 10px;
+}
+
+.pt-56{
+  padding-top: 56px;
+}
+
+.h-100{
+  height:calc(100vh - 56px);
+  overflow: auto
+}
+
+.min-h-100-56{
+  min-height: calc(100vh - 56px);
+}
+
+.min-h-100-192{
+  min-height: calc(100vh - 192px);
+}
+
+.page-name{
+  width: 100%;
+  margin-top: 56px;
+  background: #3f51b5;
+  height: 80px;
+  color: white;
+  padding-left: 20px;
+  box-sizing: border-box;
+  h1{
+    font-weight: 300;
+    margin: 0;
+    padding: 28px 8px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+  }
+}
+
+.capitalize{
+  text-transform: capitalize;
 }

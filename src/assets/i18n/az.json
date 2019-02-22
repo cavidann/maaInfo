@@ -1,5 +1,15 @@
 {
   "paragraph": "paraqraflar",
+  "news": "xəbərlər",
   "start-btn": "öyrənməyə başla",
-  "posts": "son  postlar"
+  "posts": "son  postlar",
+  "back": "geri get",
+  "contactForm": {
+    "formName": "əlaqə",
+    "fname": "ad",
+    "lname": "soyad",
+    "email": "email",
+    "msg": "mesaj",
+    "send": "mesajı göndər"
+  }
 }

@@ -1,38 +1,14 @@
-<mat-accordion>
-  <mat-expansion-panel>
+<!-- <mat-accordion> -->
+  <mat-expansion-panel [expanded]="!false" *ngFor="let paragraph of allParagraphs">
     <mat-expansion-panel-header style="height: 48px!important;">
       <mat-panel-title>
-        Form Controls
+        {{paragraph.fields.paragraph}}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-list role="list">
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/1" routerLinkActive="active" >link1</a>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/2" routerLinkActive="active" >link2</a>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/3" routerLinkActive="active" >link3</a>
+      <mat-list-item role="listitem" *ngFor="let info of paragraph.fields.info">
+        <a routerLink="/{{lang}}/paragraph/{{info}}" routerLinkActive="active" >{{info}}</a>
       </mat-list-item>
     </mat-list>
   </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header style="height: 48px!important;">
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-list role="list">
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/4" routerLinkActive="active" >link1</a>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/5" routerLinkActive="active" >link2</a>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <a routerLink="{{lang}}/paragraph/6" routerLinkActive="active" >link3</a>
-      </mat-list-item>
-    </mat-list>
-  </mat-expansion-panel>
-</mat-accordion>
+<!-- </mat-accordion> -->

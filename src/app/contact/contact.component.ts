@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
   }
 
   constructor(
-    // private fb: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private http: HttpClient
   ) { }
@@ -52,7 +52,6 @@ export class ContactComponent implements OnInit {
     this.sending = true;
     console.log(formData);
     // this.http.post('http://localhost:4200/home', JSON.stringify(formData));
-    // this.http.sendEmail('http://formspree.io/cavi98@icloud.com', JSON.stringify(formData));
     setTimeout(() => {
       this.sending = false;
       this.cancelForm();

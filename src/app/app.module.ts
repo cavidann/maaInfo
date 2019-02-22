@@ -21,15 +21,23 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParagraphComponent } from './paragraph/paragraph.component';
 import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './news/news.component';
+import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
+
+import { RemovewhitespacesPipe } from './pipes/removewhitespaces.pipe';
+import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'az/home', pathMatch: 'full' },
   { path: ':lang/home', component: HomeComponent},
   { path: ':lang/paragraph', children: [
-    { path: '', redirectTo: '1', pathMatch: 'full' },
+    { path: '', redirectTo: 'learn', pathMatch: 'full' },
+    { path: 'learn', component: ParagraphComponent },
     { path: ':id', component: ParagraphComponent}
   ]},
+  { path: ':lang/news', component: NewsComponent },
+  { path: ':lang/details/:id', component: DetailsComponent },
   { path: 'contactus', component: ContactComponent, outlet: 'popup'}
 ];
 
@@ -46,7 +54,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ParagraphComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    RemovewhitespacesPipe,
+    MdToHtmlPipe,
+    NewsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
