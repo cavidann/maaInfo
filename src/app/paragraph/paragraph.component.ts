@@ -34,11 +34,11 @@ export class ParagraphComponent implements OnInit {
     this.router.events.subscribe(
       () => {
         this.id = this.route.snapshot.paramMap.get('id');
-        this.isOpen = false;
+        // this.isOpen = false;
 
-        this.lang = this.router.url.substring(1, 3);
+        // this.lang = this.router.url.substring(1, 3);
         this.getLesson(this.lang, this.id);
-        this.checkParagraphLink();
+        // this.checkParagraphLink();
 
       }
     );

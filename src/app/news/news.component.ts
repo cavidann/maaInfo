@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../services/contentful.service';
 import { Entry } from 'contentful';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PagerService } from '../services/pager.service';
 
 @Component({
   selector: 'app-news',
@@ -12,33 +13,54 @@ export class NewsComponent implements OnInit {
 
   allNews: Entry<any>[] = [];
   lang: string;
+  pager: any = {};
+  // allItems: any[];
+  pages: any[];
+  pageSize = 1;
+  activePage: number;
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private contentfulService: ContentfulService,
-    private router: Router
+    private pagerService: PagerService
   ) { }
 
   ngOnInit() {
     this.lang = this.router.url.substring(1, 3);
-    this.getParagraphs(this.lang);
+    this.getNews(this.lang);
+    this.activePage = +this.route.snapshot.paramMap.get('id');
 
-    this.router.events.subscribe(
-      () => {
-        this.getParagraphs(this.lang);
-      }
-    );
+    // this.router.events.subscribe(
+    //   () => {
+    //     this.activePage = +this.route.snapshot.paramMap.get('id');
+    //     this.getNews(this.lang);
+    //   }
+    // );
   }
 
-  getParagraphs(lang) {
+  getNews(lang) {
     this.contentfulService.getAllNews(lang)
     .then(news => {
       this.allNews = news;
+      this.setPage(this.activePage);
       // console.log(this.allNews);
     });
   }
 
   goToDetailPage(workId) {
     this.router.navigate([this.lang + '/details', workId]);
+  }
+
+  setPage(pageNumber: number) {
+    // this.pagerService.show();
+    this.pager = this.pagerService.getPager(this.allNews.length, pageNumber, this.pageSize);
+
+    // // current page posts
+    this.pages = this.allNews.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    // console.log('2');
+    // this.router.navigate([this.lang + '/news/' + this.activePage]);
+
   }
 
 }

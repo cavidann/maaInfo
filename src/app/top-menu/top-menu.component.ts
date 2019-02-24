@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-top-menu',
@@ -11,15 +12,25 @@ export class TopMenuComponent implements OnInit {
 
   defaultLang: string;
   lang: string;
+  searchForm: FormGroup;
+  // searchedWorks: '';
+
+  // get search() {
+  //   return this.searchForm.get('search');
+  // }
 
   constructor(
     private translate: TranslateService,
     private router: Router
   ) {
+    this.defaultLang = 'az';
     this.setDefaultLang();
   }
 
   ngOnInit() {
+    this.searchForm = new FormGroup({
+      search : new FormControl(null, Validators.required),
+    });
   }
 
   switchLanguage(lang: string) {
@@ -41,6 +52,10 @@ export class TopMenuComponent implements OnInit {
         }
       }
     );
+  }
+
+  searchContent(searchForm) {
+    this.router.navigate([this.lang + '/search', searchForm.search]);
   }
 
 }

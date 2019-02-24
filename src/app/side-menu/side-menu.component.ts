@@ -22,13 +22,13 @@ export class SideMenuComponent implements OnInit {
     this.lang = this.router.url.substring(1, 3);
     this.getParagraphs(this.lang);
 
-    this.router.events.subscribe(
-      () => {
-        this.lang = this.router.url.substring(1, 3);
-        this.getParagraphs(this.lang);
-        // console.log(this.router.url);
-      }
-    );
+    // this.router.events.subscribe(
+    //   () => {
+    //     this.lang = this.router.url.substring(1, 3);
+    //     this.getParagraphs(this.lang);
+    //     // console.log(this.router.url);
+    //   }
+    // );
   }
 
   getParagraphs(lang) {

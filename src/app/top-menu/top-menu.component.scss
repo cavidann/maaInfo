@@ -28,3 +28,47 @@ header{
     height: 100%;
   }
 }
+
+.search{
+  position: relative;
+  *{
+    color: white;
+    font-weight: 700;
+    // font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px!important;
+  }
+  input{
+    text-transform: capitalize;
+    // color: white;
+    text-decoration: none;
+    padding: 0 16px;
+    height: 100%;
+    border: none;
+    border: 1px solid white;
+    background: transparent;
+    &::placeholder{
+      color: white;
+      font-size: 14px;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  .search-btn{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    visibility: hidden;
+    transition: .3s ease-in-out;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &.active{
+      visibility: visible;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}

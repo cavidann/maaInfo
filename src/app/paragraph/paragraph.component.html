@@ -1,4 +1,4 @@
-<div class="h-100" *ngIf="lesson">
+<div *ngIf="lesson">
   <div class="flex a-center page-name">
     <i class="fa fa-bars link" (click)="setCondition()" aria-hidden="true"></i>
     <h1 *ngIf="isParagraphSelected; else learnTxt">
@@ -16,10 +16,13 @@
       <app-side-menu></app-side-menu>
     </div>
     <div class="content" *ngIf="isParagraphSelected; else learn">
-      <h1>{{ lesson.fields.title }}</h1>
-      <div [innerHTML]="lesson.fields.content | mdToHtml"></div>
+      <div *ngIf="lesson !== undefined; else load">
+        <h1>{{ lesson.fields.title }}</h1>
+        <div [innerHTML]="lesson.fields.content | mdToHtml"></div>
+      </div>
     </div>
     <ng-template #learn>Learn</ng-template>
+    <ng-template #load>load</ng-template>
   </div>
   <!-- <app-footer></app-footer> -->
 </div>

@@ -26,11 +26,11 @@ export class DetailsComponent implements OnInit {
 
     this.getNews(this.lang);
 
-    this.router.events.subscribe(
-      () => {
-        this.getNews(this.lang);
-      }
-    );
+    // this.router.events.subscribe(
+    //   () => {
+    //     this.getNews(this.lang);
+    //   }
+    // );
   }
 
   getNews(lang) {
