@@ -28,12 +28,12 @@ export class SearchComponent implements OnInit {
 
     this.search(this.lang, this.keyWord);
 
-    this.router.events.subscribe(
-      () => {
-        this.keyWord = this.route.snapshot.paramMap.get('id').toLocaleLowerCase();
-        this.search(this.lang, this.keyWord);
-      }
-    );
+    // this.router.events.subscribe(
+    //   () => {
+    //     this.keyWord = this.route.snapshot.paramMap.get('id').toLocaleLowerCase();
+    //     this.search(this.lang, this.keyWord);
+    //   }
+    // );
   }
 
   search(lang, keyWord) {

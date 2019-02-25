@@ -16,18 +16,22 @@
 .content{
   width: calc(100% - 240px);
   padding: 25px 50px;
+  padding-left: 25px;
   box-sizing: border-box;
 }
-
-// .min-h{
-//   min-height: calc(100vh - 192px);
-// }
 
 .fa-bars{
   display: none;
   font-size: 30px;
   padding: 25px 0px;
   padding-right: 15px;
+}
+
+@media only screen and (max-width: 1024px){
+  .content{
+    padding-left: 0px;
+    padding-right: 20px;
+  }
 }
 
 @media only screen and (max-width: 840px){
@@ -46,7 +50,7 @@
   }
 
   .content{
-    padding: 25px;
+    padding: 25px 20px;
   }
 
   .w-240{

@@ -20,3 +20,18 @@
     text-transform: capitalize;
   }
 }
+
+@media only screen and (max-width: 667px){
+  :host{
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: auto;
+    right: auto;
+    z-index: 90;
+    .panel-body{
+      width: 100%;
+    }
+  }
+}

@@ -43,7 +43,7 @@ export class ContentfulService {
       .then(res => res.items);
   }
 
-  getLessonContent(locale = 'ru', lessonName): Promise<Entry<any>> {
+  getLessonContent(locale = 'ru', title): Promise<Entry<any>> {
     return this.client
       .getEntries(
         Object.assign(
@@ -51,7 +51,7 @@ export class ContentfulService {
             content_type: 'lessonContent',
             locale: locale
           },
-          { 'fields.title': lessonName }
+          { 'fields.title': title }
         )
       )
       .then(res => res.items[0]);

@@ -138,3 +138,91 @@ img{
   text-transform: capitalize;
 }
 
+* {
+  animation: example;
+  animation-duration: 1s;
+}
+
+button div, form *{
+  animation-duration: 0s;
+}
+
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media only screen and (max-width: 1024px){
+  .container{
+    max-width: 920px;
+  }
+  .content{
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 812px){
+  .col-33{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 728px){
+  header{
+    height: 90px!important;
+  }
+  .mt-56{
+    margin-top: 90px;
+  }
+
+  .h-100{
+    height: calc(100vh - 90px);
+  }
+
+  .group-3{
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 728px){
+  .col-33{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 378px){
+  header{
+    padding: 8px!important;
+    a{
+      padding: 0px 8px!important;
+    }
+    form{
+      input{
+        width: 100%;
+      }
+    }
+  }
+  footer{
+    padding: 8px!important;
+    p{
+      width: 100%;
+    }
+  }
+}
+
+// .content{
+//   div{
+//     div{
+
+//       * img{
+//         width: 50%;
+//         // float: left;
+//       }
+//       *{
+//         float: left;
+//       }
+//     }
+//   }
+// }
